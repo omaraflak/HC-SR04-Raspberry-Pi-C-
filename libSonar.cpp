@@ -24,7 +24,7 @@ double Sonar::distance(int timeout)
 
     now=micros();
 
-    while (digitalRead(echo) == LOW && micros()-now<30000);
+    while (digitalRead(echo) == LOW && micros()-now<timeout);
         recordPulseLength();
 
     travelTimeUsec = endTimeUsec - startTimeUsec;
